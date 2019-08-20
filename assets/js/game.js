@@ -49,6 +49,17 @@ console.log(wordMatch);
 //converts word picked to array
 wordLetters = wordMatch.split("");
 
+function setGame() {
+  console.log("setting board");
+  var emptyboard = [];
+  console.log("building empty spaces array");
+  for (var i=0; i< wordLetters.length; i++){
+    emptyboard[i] = "_";
+    console.log(emptyboard);
+  }
+}
+
+
 gameboard();
 
 document.onkeyup = function(event) {
@@ -72,14 +83,15 @@ function checkGuess(letter) {
       console.log(letter + " has been found.");
       correctPick = true;
       correctGuesses[i] = letter;
-      console.log(letter + " has been added to correctGuesses array.");
-
+      console.log(letter + " has been added to correctGuesses array as " + correctGuesses[i] + ".");
+      gameboard()
       if (correctGuesses === wordMatch.split()) {
         console.log("checking correctGuesses vs wordMatch.");
         window.alert("you win");
         wins++;
       }
     }
+    gameboard()
   }
 
   if (!correctPick) {
@@ -101,15 +113,22 @@ function checkGuess(letter) {
 }
 
 function gameboard() {
-  var targetGameboard = document.getElementById("gameBoard");
-  var targetCorrectGuesses = document.getElementById("correctGuess");
-  var targetIncorrect = document.getElementById("incorrectGuess");
-  var targetWins = document.getElementById("WinsCount");
-  var targetLoss = document.getElementById("lossCount");
+  // var targetGameboard = document.getElementById("gameBoard");
+  // var targetCorrectGuesses = document.getElementById("correctGuess");
+  // var targetIncorrect = document.getElementById("incorrectGuess");
+  // var targetWins = document.getElementById("WinsCount");
+  // var targetLoss = document.getElementById("lossCount");
 
-  targetGameboard.textContent = gameBoard;
-  targetCorrectGuesses.textContent = correctGuess;
-  targetIncorrect.textContent = incorrectGuess;
-  targetWins.textContent = wins;
-  targetLoss.textContent = losses;
+  // targetGameboard.textContent = gameBoard;
+  // targetCorrectGuesses.textContent = correctGuess;
+  // targetIncorrect.textContent = incorrectGuess;
+  // targetWins.textContent = wins;
+  // targetLoss.textContent = losses;
+
+  document.getElementById("gameBoard").innerText = correctGuesses;
+  document.getElementById("correctGuess").innerText = correctGuesses;
+  document.getElementById("incorrectGuess").innerText = incorrectGuesses;
+  document.getElementById("WinsCount").innerText = wins;
+  document.getElementById("lossCount").innerText = losses;
+
 }

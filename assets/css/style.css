@@ -4,4 +4,8 @@ body {
    background-size: auto;
      color: green;
      widows: 1024px;
+     text-align: center;
+}
+.jumbotron {
+  background: black;
 }
