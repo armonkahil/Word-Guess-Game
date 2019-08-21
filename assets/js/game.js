@@ -48,19 +48,20 @@ console.log(wordMatch);
 
 //converts word picked to array
 wordLetters = wordMatch.split("");
-
+var emptyBoard = [];
 function setGame() {
   console.log("setting board");
-  var emptyboard = [];
+  
   console.log("building empty spaces array");
   for (var i=0; i< wordLetters.length; i++){
-    emptyboard[i] = "_";
-    console.log(emptyboard);
+    emptyBoard[i] = " _";
+    console.log(emptyBoard.join(" "));
   }
+  document.getElementById("guessCounter").innerHTML = counter;
+  document.getElementById("gameBoard").innerText = emptyBoard.join(" ");
 }
 
-
-gameboard();
+setGame()
 
 document.onkeyup = function(event) {
   var guess = event.key;
@@ -82,7 +83,7 @@ function checkGuess(letter) {
     if (wordLetters[i].toLowerCase() === letter.toLowerCase()) {
       console.log(letter + " has been found.");
       correctPick = true;
-      correctGuesses[i] = letter;
+      correctGuesses[i], emptyBoard[i] = letter;
       console.log(letter + " has been added to correctGuesses array as " + correctGuesses[i] + ".");
       gameboard()
       if (correctGuesses === wordMatch.split()) {
@@ -91,6 +92,7 @@ function checkGuess(letter) {
         wins++;
       }
     }
+    
     gameboard()
   }
 
@@ -109,26 +111,16 @@ function checkGuess(letter) {
     }
     
   }
+  
   gameboard()
 }
 
 function gameboard() {
-  // var targetGameboard = document.getElementById("gameBoard");
-  // var targetCorrectGuesses = document.getElementById("correctGuess");
-  // var targetIncorrect = document.getElementById("incorrectGuess");
-  // var targetWins = document.getElementById("WinsCount");
-  // var targetLoss = document.getElementById("lossCount");
-
-  // targetGameboard.textContent = gameBoard;
-  // targetCorrectGuesses.textContent = correctGuess;
-  // targetIncorrect.textContent = incorrectGuess;
-  // targetWins.textContent = wins;
-  // targetLoss.textContent = losses;
-
-  document.getElementById("gameBoard").innerText = correctGuesses;
-  document.getElementById("correctGuess").innerText = correctGuesses;
-  document.getElementById("incorrectGuess").innerText = incorrectGuesses;
-  document.getElementById("WinsCount").innerText = wins;
-  document.getElementById("lossCount").innerText = losses;
+  document.getElementById("gameBoard").innerHTML = emptyBoard.join(" ");
+  document.getElementById("correctGuess").innerHTML = correctGuesses.join(" ");
+  document.getElementById("incorrectGuess").innerHTML = incorrectGuesses.join(" ");
+  document.getElementById("guessCounter").innerHTML = counter;
+  document.getElementById("WinsCount").innerHTML = wins;
+  document.getElementById("lossCount").innerHTML = losses;
 
 }
