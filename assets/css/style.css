@@ -1,11 +1,26 @@
 body {
-    /* background-image: url(../images/caricature.jpg); */
-    background-image: url(../images/332406.jpg);
-   background-size: auto;
-     color: green;
-     widows: 1024px;
-     text-align: center;
+  /* background-image: url(../images/caricature.jpg); */
+  background-image: url(../images/332406.jpg);
+  background-size: auto;
+  color: gold;
+  /* width: 1024px; */
+  text-align: center;
+  font-family: 'ZCOOL KuaiLe', cursive;
+  font-size:30px;
+  overflow: hidden;
 }
-.jumbotron {
-  background: black;
+.container {
+  background: none;
+  float: left;
+  width: 960px;
+  height: auto;
+  margin: 200px auto;
+}
+
+.header {
+  margin: 15px;
+}
+#display {
+  /* border: 2px solid gold; */
+  border-radius: 5px;
 }
