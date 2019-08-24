@@ -6,43 +6,49 @@
 
     <title>Word Guess Game</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=ZCOOL+KuaiLe&display=swap"
-      rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Brush+Script|Nothing+You+Could+Do|Rock+Salt|Schoolbell&display=swap" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <div class="container-fluid">
+    <div class="container-fluid fixed-bottom">
       <div id="game" class = "jumbotron">
-        <h1>Hello,</h1>
+        <h1 class="font-effect-3d">Hello,</h1>
         <h1>I want to Play a Game.</h1>
         <h4>Press any Key to get started!</h4>
       </div>
-        <div id="display" class = "Jumbotron">
-          <h2 class="header">Current Word:</h2>
-          <h3 id="gameBoard" class = "gameData"></h3>
-          <br/>
+      <div id="display" class = "card-group">
+        <div class="card">
+          <h2 class="card-title">Current Word:</h2>
+            <p id="gameBoard" class = "card-text "></p>
         </div>
-
-        <h2 class="header">Correct Guesses</h2>
-        <h3 id="correctGuess" class = "gameData"></h3>
-        <br/>
-        <h2 class="header">Incorrect Guesses</h2>
-        <p id="incorrectGuess"></p>
-        <br />
-        <h3 class="header">Guesses Left</h3>
-        <p id="guessCounter"></p>
-
-        <br />
-        <h2 class="header">Wins</h2>
-        <p id="WinsCount">0</p>
-        <h2 class="header">Losses</h2>
-        <p id="lossCount">0</p>
+        <div class="card">
+          <h2 class="card-title">Correct Guesses</h2>
+            <h3 id="correctGuess" class = "card-text"></h3>
+        </div>
+        <div class="card">
+            <h2 class="card-title">Incorrect Guesses</h2>
+            <p id="incorrectGuess" class ="card-text"></p>
+        </div>
       </div>
-    </div>
-    <script type="text/javascript" src="assets/js/game.js">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <div class = "card-group">
+          <div class = "card">
+            <h4 class="card-title">Guesses Left</h4>
+            <p id="guessCounter" class="card-text"></p>
+          </div>
+          <div class = "card">
+            <h4 class="card-title">Wins</h4>
+          <p id="WinsCount" class= "card-text">0</p>
+          </div>
+          <div class = "card">
+            <h4 class="card-title">Losses</h4>
+            <p id="lossCount" class="card-text">0</p>
+          </div>
+        </div>
+      </div>
+<script type="text/javascript" src="assets/js/game.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    </script>
+    
   </body>
 </html>

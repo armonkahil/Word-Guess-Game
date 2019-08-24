@@ -1,11 +1,14 @@
 body {
   /* background-image: url(../images/caricature.jpg); */
-  background-image: url(../images/332406.jpg);
+  background-image: url(../images/sawReverse-1920-.jpg);
   background-size: auto;
-  color: gold;
+  color: yellow;
   /* width: 1024px; */
   text-align: center;
-  font-family: 'ZCOOL KuaiLe', cursive;
+  /* font-family: 'Schoolbell', cursive; */
+  font-family: 'Rock Salt', cursive;
+  /* font-family: 'Nothing You Could Do', cursive; */
+  /* font-family: 'Nanum Brush Script', cursive; */
   font-size:30px;
   overflow: hidden;
 }
@@ -14,16 +17,12 @@ body {
   float: left;
   width: 960px;
   height: auto;
-  margin: 100px auto;
+  /* margin: 100px auto; */
 }
 
 .header {
   margin: 15px;
   text-decoration: underline;
-}
-#display {
-  /* border: 2px solid gold; */
-  border-radius: 5px;
 }
 
 .jumbotron {
@@ -33,4 +32,13 @@ body {
 
  .gameData {
   letter-spacing: 10px;
+}
+.card {
+  background: none;
+}
+
+
+.font-effect-shadow-multiple {
+  text-shadow: .04em .04em 0 #fff,.08em .08em 0 #aaa;
+  -webkit-text-shadow: .04em .04em 0 #fff, .08em .08em 0 #aaa;
 }

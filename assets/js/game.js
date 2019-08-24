@@ -130,7 +130,7 @@ function checkGuess(letter) {
    if (!incorrectGuesses.includes(letter)) {
     wrongAns.play();
     //add wrong letter to list
-    incorrectGuesses.push(letter);
+    incorrectGuesses.push(letter.toUpperCase());
     //guess counter updated
     counter--;
    } else {
