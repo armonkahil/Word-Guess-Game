@@ -19,8 +19,18 @@ body {
 
 .header {
   margin: 15px;
+  text-decoration: underline;
 }
 #display {
   /* border: 2px solid gold; */
   border-radius: 5px;
+}
+
+.jumbotron {
+  background: none;
+  text-decoration: underline;
+}
+
+ .gameData {
+  letter-spacing: 10px;
 }
