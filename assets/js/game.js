@@ -21,11 +21,17 @@ var wrongAgain = document.createElement("audio");
 var rightAgain = document.createElement("audio");
 
 wrongAns.setAttribute("src", "assets/audio/Record Scratch 2.ogg");
-rightAns.setAttribute("src", "assets/audio/Toasty.ogg");
+rightAns.setAttribute("src", "assets/audio/Toasty.ogg", "preload");
 winnerSound.setAttribute("src", "assets/audio/Megalovania Intro.ogg");
-losingSound.setAttribute("src", "assets/audio/Losing Horn.ogg");
+losingSound.setAttribute("src", "assets/audio/Wrong Buzzer.ogg");
 wrongAgain.setAttribute("src", "assets/audio/Nope.ogg");
 rightAgain.setAttribute("src", "assets/audio/Exclamation Point.ogg");
+wrongAns.setAttribute("preload", "auto");
+rightAns.setAttribute("preload", "auto");
+winnerSound.setAttribute("preload", "auto");
+losingSound.setAttribute("preload", "auto");
+wrongAgain.setAttribute("preload", "auto");
+rightAgain.setAttribute("preload", "auto");
 
 
 
@@ -33,6 +39,7 @@ rightAgain.setAttribute("src", "assets/audio/Exclamation Point.ogg");
 function sleep(milliseconds) {
   var start = new Date().getTime();
   for (var i = 0; i < 1e7; i++) {
+    console.log(i);
     if ((new Date().getTime() - start) > milliseconds){
       break;
     }
@@ -40,8 +47,11 @@ function sleep(milliseconds) {
 }
 
 function setupGame() {
+counter=10;
 emptyBoard = [];
 correctGuesses = [];
+incorrectGuesses=[];
+document.getElementById("incorrectGuess").innerText = " ";
  console.log("running setupGame");
  //building array from word list
  wordBank = wordArray.split(" ");
@@ -50,7 +60,7 @@ correctGuesses = [];
  console.log("word picked " + wordMatch);
  //setting array to check guesses against
  wordLetters = wordMatch.split("");
-
+console.log(wordBank.length);
  for (var i = 0; i < wordLetters.length; i++) {
   //building arrays to display on page
   emptyBoard[i] = " _";
@@ -93,10 +103,10 @@ function gameboard() {
 function checkGuess(letter) {
 
  console.log("checking letter " + letter + " in checkGuess.");
- if (counter === 0){
-  console.log("game over");
-  return
-}
+//  if (counter === 0){
+//   console.log("game over");
+//   return
+// }
  //for the length of the word picked
  //letter is in array
  if (wordLetters.includes(letter)) {
@@ -119,6 +129,7 @@ function checkGuess(letter) {
     console.log(letter + "has been added to correctGuesses array as " + correctGuesses[i] + ".");
     console.log("print board");
     console.log("correctguesses variable " + correctGuesses.join(""));
+    gameboard()
 
    }
    //checks to see is word guesses so far matches the entire word  
@@ -152,12 +163,17 @@ function checkGuess(letter) {
     wrongAgain.play();
    }
 
-   if (counter === 0) {
+   
+   if (counter<0) {
+     return
+   } else if (counter === 0) {
     console.log("end of game");
-    emptyBoard = wordMatch.split("");
-    losses++;
     losingSound.play();
-    setTimeout(setupGame, 6000);
+    emptyBoard = wordMatch.split("");
+    incorrectGuesses = [];
+    losses++;
+    gameboard()
+    confirm("Would like to continue?");
    }
   }
   gameboard();
