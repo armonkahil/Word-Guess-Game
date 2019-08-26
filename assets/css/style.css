@@ -37,8 +37,6 @@ body {
   background: none;
 }
 
-
-.font-effect-shadow-multiple {
-  text-shadow: .04em .04em 0 #fff,.08em .08em 0 #aaa;
-  -webkit-text-shadow: .04em .04em 0 #fff, .08em .08em 0 #aaa;
+audio {
+  
 }
