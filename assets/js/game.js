@@ -57,7 +57,7 @@ document.getElementById("incorrectGuess").innerText = " ";
  wordBank = wordArray.split(" ");
  //picking random word from wordBank
  wordMatch = wordBank[Math.floor(Math.random() * wordBank.length)];
- console.log("word picked " + wordMatch);
+//  console.log("word picked " + wordMatch);
  //setting array to check guesses against
  wordLetters = wordMatch.split("");
 console.log(wordBank.length);
