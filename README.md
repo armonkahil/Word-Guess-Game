@@ -1,6 +1,6 @@
 # Word-Guess-Game
 ## Instructions
-## https://github.com/armonkahil/Word-Guess-Game.git
+## https://armonkahil.github.io/Word-Guess-Game/
 
 Press any key to get started!
 Wins: (# of times user guessed the word correctly).
