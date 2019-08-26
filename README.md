@@ -1,6 +1,7 @@
 # Word-Guess-Game
 ## Instructions
-https://github.com/armonkahil/Word-Guess-Game.git
+## https://github.com/armonkahil/Word-Guess-Game.git
+
 Press any key to get started!
 Wins: (# of times user guessed the word correctly).
 If the word is madonna, display it like this when the game starts: _ _ _ _ _ _ _.
