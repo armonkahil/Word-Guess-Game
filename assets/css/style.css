@@ -1,5 +1,4 @@
 body {
-  /* background-image: url(../images/caricature.jpg); */
   background-image: url(../images/sawReverse-1920-.jpg);
   background-size: auto;
   color: yellow;
@@ -35,8 +34,4 @@ body {
 }
 .card {
   background: none;
-}
-
-audio {
-  
 }
