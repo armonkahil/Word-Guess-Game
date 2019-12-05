@@ -89,7 +89,7 @@ setupGame()
 //waiting for a key pressed
 document.onkeyup = function (event) {
   var guess = event.key;
-  //if A-Z kepressed...
+  // if A-Z kepressed...
   if (event.keyCode >= 65 && event.keyCode <= 90) {
     //send key guess to guess checker function
     checkGuess(guess.toLowerCase());
@@ -99,7 +99,7 @@ document.onkeyup = function (event) {
   }
 };
 
-//setups gameboard to be displayed
+// setups gameboard to be displayed
 function gameboard() {
 
   document.getElementById("gameBoard").innerHTML = emptyBoard.join(" ");
@@ -136,17 +136,17 @@ function checkGuess(letter) {
         gameboard()
 
       }
-      //checks to see is word guesses so far matches the entire word  
+      // checks to see is word guesses so far matches the entire word  
       if (correctGuesses.join("") == wordMatch) {
-        //update wins counter..
+        // update wins counter..
         wins++;
-        //updates board to display winning word
+        // updates board to display winning word
         gameboard();
         //plays winning sound
         winnerSound.play();
-        //function to display window and pause game long enough for sound to finish playing
+        // function to display window and pause game long enough for sound to finish playing
         sleep(5000);
-        //correct word shown in window
+        // correct word shown in window
         confirm("Your word was '" + wordMatch + "'. Would like to continue?");
         // resets game
         setupGame()
