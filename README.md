@@ -9,7 +9,7 @@ This is a simple hangman game written in Javascript. But by no means is the game
 - Press any key to start
 - 9 Chances to guess the word
 - When out of guesses or get lucky, the game restarts.
-
+## [Check out the demo hosted on Heroku](https://armonkahil.github.io/Word-Guess-Game/)
 ![Demo](assets/images/Demo.gif)
 
 
